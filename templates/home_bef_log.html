@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+
+    <!--Bootsrap links-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
+    <!--links to add a specific fonts from google-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+    <!-- code to link the css file present in static folder-(home.css) -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/homeb.css') }}">
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+
+            <div class="row">
+                <div class="col" id="title">
+                    <h1>VISHAAL'S</h1>
+                    <h3>PAINT AND TEXTURE COATINGS</h3>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="g-0 row" id="nav_bar">
+
+                <!-- left side column1 -->
+                <div class="col-md-10" id="column1">
+                    <!-- Left side: Hamburger toggle -->
+                    <div class="hamburger" onclick="toggleMenu()"> ☰ </div>
+
+                    <!-- Center: Navigation menu -->
+                    <div class="components" id="nav_opt">
+                        <ul>
+                            <li><a href="{{ url_for('home') }}">Home</a></li>
+                            <li><a href="{{ url_for('services') }}">Services</a></li>
+                            <li><a href="{{ url_for('about') }}">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right side column: Logout -->
+                <div class="g-0 col" id="logout_sec">
+                    <div class="admin-icon" onclick="toggleLogoutMenu()"> 👤 </div>
+
+                    <ul id="logout_menu">
+                        
+                        <li><a href="{{ url_for('signin') }}">Sign In</a></li>
+                        <li><a href="{{ url_for('login') }}">Log in</a></li>
+
+                    </ul>
+                    </div>
+                </div>
+
+                <!-- script to make the logout toogle responsive -->
+              
+        </div>
+    </header>
+
+    <!--Empty div to break space between to sections -->
+    <div class="space">
+
+    </div>
+    <div class="space">
+
+    </div>
+    <div class="space">
+
+    </div>
+    <!--vedio on the home page -->
+
+    <div class="container-fluid p-0" id="h_vedio">
+        <div class="row m-0">
+            <div class="col-md p-0">
+                <!-- Video Element -->
+                <video autoplay muted loop>
+                    <source src="{{ url_for('static', filename='images/paintvedio.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+    
+                <!-- Overlay Text -->
+                <div class="overlay-text">
+
+                    <div class="v_content">
+                    <h1>Ready for a Free Quote?</h1> 
+                    </div>
+
+                    <br>
+    
+                    <center><a href="{{ url_for('contactUs') }}" id="vd_btn">CONTACT US!</a></center>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+ <!-- About Section -->
+<div class="container" id="about">
+    <div class="row text-center" id="abt_title">
+        <div class="col-12">
+            <strong> ABOUT THE COMPANY </strong>
+        </div>
+    </div>
+
+    <div class="row" id="abt_content">
+        <div class="col-12 col-md-6 mx-auto text-center">
+            <p>
+                I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text”
+                or double click me to add your own content and make changes to the font. Feel free to drag and drop me
+                anywhere you like on your page. I’m a great place for you to tell a story and let your users know a
+                little more about you. This is a great space to write long text about your company and your services.
+            </p>
+        </div>
+
+        <!-- Space Divider -->
+        <div class="w-100 d-md-none" style="height:12px;"></div>
+
+       
+        <div class="col-12 col-md-6 mx-auto text-center">
+            <!-- BUTTON -->
+            <a href="{{ url_for('about') }}" id="abt_btn" class=" d-inline-block">More Info</a>
+        </div>
+    </div>
+</div>
+
+
+    <!--space div-->
+    <div class="space">
+
+    </div>
+    <div class="space">
+
+    </div>
+
+    <!--TEXTURE PAINTING SECTION-->
+    <div class="container-fluid" id="txt_container">
+        <div class="row">
+            <!-- First Column: Images (Appears on Top in Mobile) -->
+            <div class="col-12 order-1 order-md-1 d-flex justify-content-center align-items-center" id="column_1">
+                <div class="image-container">
+                    <img src="{{ url_for('static', filename='images/texture1.jpg') }}" 
+                        alt="Texture Image" 
+                        class="img-fluid txt_image">
+                    
+                    <img src="{{ url_for('static', filename='images/texture3.jpg') }}" 
+                        alt="Texture Image" 
+                        class="img-fluid txt_image">
+    
+                    <!-- Extra Image (Visible only on Laptop) -->
+                    <img src="{{ url_for('static', filename='images/texture1.jpg') }}" 
+                        alt="Extra Texture Image" 
+                        class="img-fluid txt_image d-none d-md-flex"> <!-- Hidden on mobile -->
+                </div>
+            </div>
+    
+            <!-- Second Column: Content (Appears Below in Mobile) -->
+            <div class="col-12 order-2 order-md-2 d-flex flex-column justify-content-center align-items-center text-center" id="txt_content">
+                <h1>Transform your space with stunning textures!</h1>
+                <p>Explore the innovative painting techniques services provided by us that will elevate your home or office.</p>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+        <!--Budget Calculator container-->
+        <div class="container-fluid" id="Budget_cal">
+            <div class="row">
+                <div class="d-flex justify-content-center align-items-center bg-light">
+                    <div class="card text-center shadow" id="budget_card" style="width: 22rem;height:20rem">
+                        <div class="card-body">
+                            <h5 class="card-title">Budget Calculator</h5>
+                            <p class="card-text">Easily manage your expenses and savings.</p>
+
+                            <!--BUTTON-->
+                            <a href="{{ url_for('signin') }}"  class="Budget_btn">Get Started</a>
+                   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- color guide section -->
+        <div class="container-fluid">
+
+            <div class="row" id="paint_vis"> <!-- Move ID here -->
+        
+                <div class="col-7" id="paint_col1">
+                    <h1> Color Guide </h1>
+                    <p>Discover Your Perfect Wall Colors- Click below to Visualize Them in Your Space!</p> <br>
+        
+                    <a href="{{ url_for('signin') }}" id="abt_btn">Get Started</a>
+                </div>
+        
+                <div class="col-5" id="paint_col2">
+                    <video class="fixed-height_txt" autoplay muted loop>
+                        <source src="{{ url_for('static', filename='images/colguide1.mp4') }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+        
+            </div>
+        
+        </div>
+
+        
+        <!--Space div to create division-->
+        <div class="space">
+
+        </div>
+        <div class="space">
+
+        </div>
+
+        <!-- PAST PROJECT SECTION -->
+        <div class="carousel-main">
+            <div class="title-cou">
+                <h3> Completed Projects</h3>
+            </div>
+
+            <div class="auto-carousel">
+                <div class="carousel-container">
+                    <div class="slide">
+                        <img src="{{ url_for('static', filename='images/proj1.jpg') }}" alt="Project 1">
+                    </div>
+
+                    <div class="slide">
+                        <img src="{{ url_for('static', filename='images/proj2.jpg') }}" alt="Project 1">
+                    </div>
+
+                    <div class="slide">
+                        <img src="{{ url_for('static', filename='images/proj3.jpg') }}" alt="Project 1">
+                    </div>
+
+                    <div class="slide">
+                        <img src="{{ url_for('static', filename='images/prj4.jpg') }}" alt="Project 1">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!--FOOTER-->
+        <div class="footer" style="background-color: antiquewhite;">
+            <footer>
+                <div class="container-fluid p-4 bg-dark text-light">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h4>Contact Us</h4>
+                            <p>Phone: +1-123-456-7890</p>
+                            <p>Email: info@vishaals.com</p>
+                            <p>Address: 123 Painting Lane, City, State, ZIP</p>
+                        </div>
+                        <div class="col-md-3">
+                            <h4>Our Paint Partners</h4>
+                            <ul>
+                                <li><a href="https://www.asianpaints.com" target="_blank">Asian Paints</a></li>
+                                <li><a href="https://www.bergerpaints.com" target="_blank">Berger Paints</a></li>
+                                <li><a href="https://www.nipponpaint.com" target="_blank">Nippon Paints</a></li>
+                                <li><a href="https://www.dulux.com" target="_blank">Dulux Paints</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <h4>Quick Links</h4>
+                            <ul>
+                                <li><a href="{{ url_for('home') }}">Home</a></li>
+                                <li><a href="{{ url_for('services') }}">Services</a></li>
+                                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                            </ul>
+                           
+                        </div>
+                        <div class="col-md-3">
+                            <h4>Follow Us</h4>
+                            <a href="https://facebook.com/vishaals" target="_blank">Facebook</a> |
+                            <a href="https://instagram.com/vishaals" target="_blank">Instagram</a>
+                        </div>
+                    </div>
+                    <div class="text-center mt-3">
+                        <p>&copy; 2025 VISHAAL'S Painting Services. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+
+        <script>
+            // Toggle Navigation Menu
+            function toggleMenu() {
+                const navMenu = document.getElementById("nav_opt");
+                const logoutMenu = document.getElementById("logout_menu");
+        
+                // Close logout menu if open
+                logoutMenu.classList.remove("active");
+        
+                // Toggle nav menu
+                navMenu.classList.toggle("active");
+            }
+        
+            // Toggle Logout Menu
+            function toggleLogoutMenu() {
+                const logoutMenu = document.getElementById("logout_menu");
+                const navMenu = document.getElementById("nav_opt");
+        
+                // Close nav menu if open
+                navMenu.classList.remove("active");
+        
+                // Toggle logout menu
+                logoutMenu.classList.toggle("active");
+            }
+        
+            // Close both menus when clicking outside
+            document.addEventListener("click", function (event) {
+                const navMenu = document.getElementById("nav_opt");
+                const logoutMenu = document.getElementById("logout_menu");
+                const hamburger = document.querySelector(".hamburger");
+                const adminIcon = document.querySelector(".admin-icon");
+        
+                const clickedInsideNav = navMenu.contains(event.target) || hamburger.contains(event.target);
+                const clickedInsideLogout = logoutMenu.contains(event.target) || adminIcon.contains(event.target);
+        
+                if (!clickedInsideNav) {
+                    navMenu.classList.remove("active");
+                }
+        
+                if (!clickedInsideLogout) {
+                    logoutMenu.classList.remove("active");
+                }
+            });
+        </script>
+        
+
+
+
+
+        <!--link to CONNECT HOME.JS to HOME.HTML-->
+        <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+
+
+
+
+        <!-- Bootstrap JS and dependencies -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+        <!-- Bootstrap JS Bundle -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+        <!-- Bootsrap js links-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+            integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>

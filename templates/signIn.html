@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+
+    <!-- Link to signIn.css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/signIn.css') }}">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container" id="signIn_section">
+        <div class="row" id="signIn_row">
+
+            <div class="col" id="left_section">
+                <h1>VISHAAL'S</h1>
+                <h3 style="font-size: 20px;">PAINT AND TEXTURE COATINGS</h3>
+            </div>
+
+            <br>
+            <br>
+
+            <div class="col" id="right_section">
+                <div class="contact_form_container">
+                    <div class="card shadow-lg" id="Contct_form" style="width: 20rem; height:65vh; border-radius: 0px;">
+                        <div class="card-body">
+                            <h5 class="card-title text-center mb-4">Sign In</h5>
+
+                            <!-- ✅ Corrected form action -->
+                            <form method="POST" action="/signin" onsubmit="return validateForm()">
+
+                            
+
+                                <!-- ✅ Email Field -->
+                                <div class="mb-3">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" required autofocus oninput="validateEmail()">
+                                    <div id="emailError" class="text-danger"></div>
+                                </div>
+                                
+                                
+                                
+
+                                <!-- ✅ Password Field -->
+                                <div class="mb-3">
+                                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" required oninput="validatePassword()">
+                                    <div id="passwordError" class="text-danger"></div>
+                                </div>
+
+                                <!-- ✅ Confirm Password (Fixed name attribute) -->
+                                <div class="mb-3">
+                                    <input type="password" class="form-control" id="password2" name="password2" placeholder="Confirm Password" required oninput="comparePasswords()">
+                                    <div id="passwordConfirmError" class="text-danger"></div>
+                                </div>
+
+                                <!-- ✅ Submit Button -->
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-primary">Sign In</button>
+                                </div>
+
+                                <div class="line"></div>
+
+                                <!-- Already have an account? -->
+                                <div class="text-center mt-3">
+                                    Already have an account? <a href="/login" class="login_text">Login</a>
+                                </div>
+                            
+
+                                <!-- ✅ Flash Message Section -->
+                                {% with messages = get_flashed_messages(with_categories=true) %}
+                                {% if messages %}
+                                    {% for category, message in messages %}
+                                        <div class="alert alert-{{ category }}" role="alert">
+                                            {{ message }}
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
+                            {% endwith %}                                     
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="space"></div>
+
+    <!-- ✅ JavaScript for Real-Time Validation -->
+    <script>
+        function validateEmail() {
+                                        let emailInput = document.getElementById("email");
+                                        let emailError = document.getElementById("emailError");
+                                        let email = emailInput.value.trim();
+                                    
+                                        // Regular expression for email validation
+                                        let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                                    
+                                        if (!emailPattern.test(email)) {
+                                            emailError.innerText = "Please enter a valid email address!";
+                                            emailInput.classList.add("is-invalid"); // Bootstrap invalid style
+                                        } else {
+                                            emailError.innerText = "";
+                                            emailInput.classList.remove("is-invalid");
+                                            emailInput.classList.add("is-valid"); // Bootstrap valid style
+                                        }
+                                    }
+       
+
+        function validatePassword() {
+            let password = document.getElementById("password").value;
+            let passwordError = document.getElementById("passwordError");
+
+            if (password.length < 6) {
+                passwordError.innerText = "Password must be at least 6 characters.";
+            } else {
+                passwordError.innerText = ""; // Clear error when valid
+            }
+        }
+
+        function comparePasswords() {
+            let password = document.getElementById("password").value;
+            let password2 = document.getElementById("password2").value;
+            let passwordConfirmError = document.getElementById("passwordConfirmError");
+
+            if (password !== password2) {
+                passwordConfirmError.innerText = "Passwords do not match.";
+            } else {
+                passwordConfirmError.innerText = ""; // Clear error when valid
+            }
+        }
+
+        function validateForm() {
+            validateEmail();
+            validatePassword();
+            comparePasswords();
+
+            return !(document.getElementById("emailError").innerText || 
+                     document.getElementById("passwordError").innerText || 
+                     document.getElementById("passwordConfirmError").innerText);
+        }
+    </script>
+
+    <!-- ✅ Footer Section -->
+    <div class="footer">
+        <footer>
+            <div class="container-fluid p-4 bg-dark text-light">
+                <div class="row">
+                    <div class="text-center mt-3">
+                        <p>&copy; 2025 VISHAAL'S Painting Services. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -7,7 +7,18 @@ body{
     font-family: "Cormorant Garamond", serif;
     font-weight: 300; /* Optional: Set light weight as default */
     font-style: normal; /* Optional: Ensure normal font style */
+    color:white;
   }
+
+html, body {
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+    width: 100%;
+    margin:0;
+    padding:0;
+}
+
+
+  
 header{
     background-color: #133550;
 }
@@ -20,7 +31,8 @@ header{
     
 }
 .components {
-background-color: #133550; /* Background color for the header */
+background-color:  #133550;/* Background color for the header */
+margin-left:200px;
 padding: 10px 0; /* Padding for the header */
 }
 
@@ -29,11 +41,12 @@ list-style: none; /* Remove bullet points */
 display: flex; /* Align items in a row */
 justify-content: center; /* Evenly space items */
 margin: 0;
-padding: 0;
+padding: 0 40px;
 }
 
 .components li {
-margin: 0 15px; /* Space between items */
+margin: 0 10px; /* Space between items */
+
 }
 
 .components a {
@@ -48,19 +61,103 @@ transition: color 0.3s ease; /* Smooth transition for hover effect */
 color: #ff6347; /* Change to a different color on hover (e.g., tomato) */
 }
 
+#logout_menu li{
+    list-style: none;
+}
+
+#logout_menu a
+{
+    text-decoration: none;
+    color:white;
+    font-weight: 900;
+}
+#logout_menu
+{
+display: flex;
+justify-content: space-between;
+flex-direction:row;
+width:150px;
+margin-top:16px;
+}
+
 /* empty div of height 2px*/
 .space
 {
     height:5px;
+    background-color: white;
 }
 
-/* styling the height of the home vedio to be 360px */
-.fixed-height {
-    height: 500px;      /* Fix the height */
-    object-fit: cover;  /* Ensure the video fills the width while maintaining its aspect ratio */
-  }
+/* Video Container Styling */
+#h_vedio {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 70vh; /* Ensures the container height is consistent */
+}
+
+/* Video Styling */
+#h_vedio video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the container */
+    z-index: 1; /* Places the video behind the overlay */
+}
+
+/* Overlay Text Styling */
+.overlay-text {
+    position: absolute;
+    top: 50%; /* Centers text vertically */
+    left: 50%; /* Centers text horizontally */
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    font-weight: 900;
+    z-index: 2; /* Places overlay text above the video */
+    text-decoration: none;
+   
+}
+
+/* Overlay Text Heading */
+.overlay-text .v_content h1 {
+    font-weight: 900;
+    text-shadow: 0 10px 10px rgba(0, 0, 0, 0.5); /* Adds shadow for better visibility */
+    font-size: 3rem;
+    color:white;
+    text-decoration:none !important; /* Force removal of underline */
+}
+
+/* Button Styling */
+#vd_btn {
+    background-color: #133550; /* Primary background */
+    color: white; /* Text color */
+    border: 1px solid white; /* White border */
+    padding: 10px 20px; /* Button padding */
+   /* Remove underline from links */
+    font-size: 16px; /* Font size */
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth hover transition */
+    text-decoration: none; 
+}
+
+#vd_btn:hover {
+    background-color: white;
+    color: #133550;
+    transform: scale(1.05); /* Slight hover enlargement */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
 
 /*styling the about section*/
+#about
+{
+    color:black;
+}
 #abt_title
 {
     text-align: center;
@@ -70,54 +167,580 @@ color: #ff6347; /* Change to a different color on hover (e.g., tomato) */
 
 #abt_content
 {
+    text-align: center;
 font-size:1.2rem;
 font-weight:500;
+color:black;
+flex-direction: column;
 }
-#abt_btn
-{
+
+#abt_btn {
+    background-color: #133550; /* Primary background */
+    color: white; /* Text color */
+    border: 1px solid white; /* White border */
+    padding: 10px 20px; /* Better padding for a button look */
+    text-decoration: none; /* Remove underline from links */
+    font-size: 16px; /* Adjust font size */
+    font-weight: bold; /* Make text bold */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+#abt_btn:hover {
+    background-color: white; /* Change background to white on hover */
+    color: #133550; /* Invert text color */
+    transform: scale(1.05); /* Slightly enlarge the button */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+}
+
+
+/* Mobile View (Screens smaller than 768px) */
+@media (max-width: 768px) {
+   
+     body {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden; /* Ensures no horizontal scroll */
+        }
     
-    color:white;
+        #about {
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box; /* Ensures padding doesn’t cause overflow */
+            text-align: center;
+        }
+    
+        #abt_content {
+            width: 100%;
+            max-width: 100%;
+            padding: 10px;
+            text-align: center;
+        }
+    
+        #abt_content p {
+            margin: 0 auto;
+            max-width: 90%; /* Ensures text stays within bounds */
+            font-size: 14px;
+            word-wrap: break-word; /* Prevents long words from causing overflow */
+        }
+    
+        #abt_btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            font-size: 14px;
+            text-decoration: none;
+            background-color: #133550;
+            color: white;
+            border-radius: 5px;
+        }
+    
+        /* Ensure rows and columns don't cause overflow */
+        .row {
+            margin: 0 auto;
+            max-width: 100%;
+            flex-wrap: wrap; /* Ensures proper wrapping on smaller screens */
+        }
+    
+        .col-12 {
+            padding: 0 10px; /* Ensures content is not touching edges */
+            max-width: 100%;
+        }
+    
+        /* Extra Fix for Any Overflowing Elements */
+        * {
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+    }
+    
+
+
+/*TEXTURE SECTION STYLING  ======================= */
+/* Prevent Any Hidden Overflow */
+
+
+/* Texture Painting Section */
+#txt_container {
     background-color: #133550;
-    border: 3px solid white;
-    padding: 6px;
+    padding: 30px 10px;
+    width: 100%;
+    display: block;
 }
 
-/*Texture painting section stylying */
-
-#txt_container
-{
-    background-color: #133550;
-
-}
-#txt_image
-{
-    margin:0;
-    padding:0;
+/* Ensure Images Stay in One Row */
+#column_1 {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
+/* Ensure Images Are Side by Side */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Space between images */
+    width: 100%;
+    max-width: 900px; /* Prevents images from stretching too much */
+}
+
+/* Image Styling */
+.txt_image {
+    width: 32%; /* Three images take up full width in laptop view */
+    height: 400px;
+    object-fit: cover;
+}
+
+/* Adjust Layout for Larger Screens */
 @media (min-width: 992px) {
-    #txt_image {
-        height:100%; /* Allow the height to adjust proportionally */
-        width: 80%; /* Increase the width for large screens */
+    .txt_image {
+        height: 500px;
     }
 }
 
-#txt_content{
-    color:white;
+/* Ensure Content is Centered */
+#txt_content {
+    color: white;
     text-align: center;
-    display: flex;  
-    flex-direction:column;             /* Use flexbox layout */
-    justify-content: center;     /* Center horizontally */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    padding: 20px;
+    width: 100%;
 }
-#column1
+
+/* Ensure Button is Visible */
+#txt_btn {
+    background-color: white;
+    color: #133550;
+    border: 1px solid white;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+
+#txt_btn:hover {
+    background-color: #133550;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* ======================= */
+/* 📱 MOBILE VIEW */
+/* ======================= */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column; /* Stack elements vertically */
+    }
+
+    /* IMAGE COLUMN (Move to Top) */
+    #column_1 {
+        order: 1; /* Ensures images appear first */
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    /* Ensure Only 2 Images Are Visible on Mobile */
+    .txt_image {
+        width: 48%; /* Two images stay side by side */
+        height: 250px;
+    }
+
+    /* Hide Extra Image on Mobile */
+    .txt_image.d-none.d-md-flex {
+        display: none !important;
+    }
+
+    /* CONTENT COLUMN (Move Below) */
+    #txt_content {
+        order: 2; /* Ensures content appears below images */
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+
+
+
+
+
+/* color guide styling  */
+
+#paint_vis
 {
-    display:flex;
-    flex-wrap:wrap;
+    background-color: #133550;
 
 }
-#txt_btn
+
+#paint_col1
 {
-    padding:3px;
-    border:2px solid #133550;
+text-align: center;
+color:white;
+font-size:1rem;
+display:flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+border-right:6px solid white;
+
 }
+#paint_col1 h1 {
+    font-size: 3rem; /* Adjust size as needed */
+    font-weight: bold; /* Optional: Emphasize text */
+    text-align: center; /* Optional: Center align */
+    margin: 20px 0; /* Optional: Adjust spacing */
+    border-bottom: 2px solid white;
+}
+
+#paint_col2
+{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-image:linear-gradient( 
+    white 70%,
+    #326782 80%, /* Light shade of #133550 */
+    #133550 90% );
+}
+
+@media (max-width: 768px) {
+
+    #paint_vis { 
+      display: flex;
+      flex-direction:row; /* Side-by-side */
+      background-color: #133550;
+    }
+  
+    #paint_col1 {
+      margin:0px;
+      text-align:left;
+      color: white;
+      font-size:1rem;
+      display:flex;
+      border-right: 6px solid white;
+      background-color:  #133550;
+      flex:1; /* Allow equal width */
+    }
+  
+    #paint_col1 h1 {
+      font-size: 2rem;
+      font-weight: bold;
+      border-bottom: 2px solid white;
+    }
+  
+    #paint_col2 {
+      display: flex;
+      justify-content:center;
+      align-items:center;
+      background-image: linear-gradient( 
+        white 70%,
+        #326782 80%,
+        #133550 90%
+      );
+      flex: 1; /* Allow equal width */
+    }
+  }
+
+
+/* Budget Calculator section styling  */
+/*budget container */
+#Budget_cal {
+    background-color:white;/* Card background */
+    color: white; /* Text color */
+    width: 18rem; /* Card width */
+    padding: 20px; /* Inner padding */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    border:1px solid  #133550;
+
+}
+
+#budget_card
+{
+    background-color: #133550;
+    color:white;
+    margin: 0; /* Removes any external space */
+    padding: 0;
+    border-radius: 0%;
+}
+
+.card-title
+{
+    font-size: 2rem; /* Adjust size as needed */
+    font-weight: bold; /* Optional: Emphasize text */
+    text-align: center; /* Optional: Center align */
+    margin: 20px 0; /* Optional: Adjust spacing */
+    border-bottom: 2px solid white;
+}
+.card-body
+{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.Budget_btn
+{
+    background-color: #133550; /* Primary background */
+    color: white; /* Text color */
+    border: 1px solid white; /* White border */
+    padding: 10px 20px; /* Better padding for a button look */
+    text-decoration: none; /* Remove underline from links */
+    font-size: 16px; /* Adjust font size */
+    font-weight: bold; /* Make text bold */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+.Budget_btn:hover {
+    background-color: white; /* Change background to white on hover */
+    color: #133550; /* Invert text color */
+    transform: scale(1.05); /* Slightly enlarge the button */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+}
+
+.container-fluid, .row, .card .card-title #budget_card  {
+    margin: 0; /* Ensures no extra space comes from these classes */
+    padding: 0;
+}
+
+/* PAST PROJECT section styling */
+.carousel-main
+ {
+    border: 8px solid white;
+    text-align: center;
+    color: white;
+    background-color:#133550;
+    border: 0.5px solid BLACK;
+}
+
+.title-cou h3 {
+    padding:11px;
+    font-size:2rem;
+    font-weight: 800;
+    position: relative;
+    display: inline-block;
+    /* Ensure the underline width matches the text */
+    border-bottom: 2px solid white;
+    /* Adjust color and thickness as needed */
+    padding-bottom: 5px;
+    /* Adds space between text and underline */
+}
+
+.auto-carousel {
+    width:98%;
+    position: relative;
+    /* Fix typo: changed 'realtive' to 'relative' */
+    height: 20em;
+    margin: 2em 0;
+    overflow: hidden;
+    /* Hide any overflow outside the container */
+    background-color: #133550;
+}
+
+.carousel-container {
+    background:#133550;
+    position: absolute;
+    /* Fix typo: changed 'absoulte' to 'absolute' */
+    top: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    /* Ensure only one image per column */
+    width: 100%;
+    /* Use full container width */
+    height: 100%;
+    transition: transform 0.5s ease;
+    /* Smooth transition when changing slides */
+}
+
+.slide {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1em;
+}
+
+.slide img {
+    height: 16em;
+    width: 60vh;
+    height: 460px;
+
+}
+
+/* css design for the mobile view bav bar */
+@media (max-width: 768px) {
+
+    .row {
+        display: flex;
+        flex-wrap: nowrap; /* Prevent wrapping */
+        align-items: center; /* Ensure vertical alignment */
+        justify-content: space-between; /* Space out columns */
+    }
+
+     /* Show Hamburger */
+    .hamburger {
+        display: block;
+        font-size:30px;
+        width:30vh;
+        cursor: pointer;
+        color: white;
+        
+        padding: 5px 15px;
+        border-radius: 5px;
+        position:relative;
+        z-index: 1000;
+    }   
+
+    #nav_bar {
+        display: flex;
+        flex-direction: row; /* Ensure left & right layout */
+        justify-content: space-between; /* Spread elements */
+        align-items: center;
+        width: 100%;
+        max-width: 100vw;
+        padding: 10px;
+       
+    }
+
+    #column1 {
+        flex:1;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+
+    /* Logout Section */
+    #logout_sec {
+        display: flex;
+        flex:1;
+        align-items: center;
+        justify-content: flex-end; /* Align logout to the right */
+        width: auto;
+    }
+
+    .admin-icon {
+        font-size: 24px;
+        cursor: pointer;
+        padding: 8px;
+        background-color: lightgray;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+    }
+
+    #logout_menu {
+        display: none; /* Initially hidden */
+        position: absolute;
+        top: 50px;
+        right: 0;
+        background-color: #133550;
+        border:2px solid white;
+        border-radius: 7px;
+        padding: 10px;
+        z-index: 100;
+    }
+
+    #logout_menu li {
+        list-style: none;
+        padding: 10px;
+        text-align: center;
+    }
+
+    #logout_menu li a {
+        color: white;
+        text-decoration: none;
+        display: block;
+    }
+
+    #logout_menu.active {
+        display: block; /* Show menu when active */
+    }
+
+
+    /* Hide Navigation Options Initially */
+    #nav_opt {
+        display: none;
+        position:absolute;
+        top: 60px;
+        right:150px;
+        background-color: #133550;
+        border:2px solid white;
+        border-radius: 7px;
+        flex-direction: column;
+        padding: 10px;
+        border-radius: 5px;
+        z-index: 1100;
+    }
+
+    #nav_opt ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: left;
+    }
+
+    #nav_opt ul li {
+        padding: 10px;
+        width: 100%;
+    }
+
+    /* Show Menu When Active */
+    #nav_opt.active {
+        display: flex;
+    }
+
+   
+}
+
+
+/* Ensuring Laptop View Resets Properly */
+@media (min-width: 769px) {
+    @media (min-width: 769px) {
+        #nav_opt {
+            display: flex !important; /* Restore visibility */
+            position: static; /* Reset position */
+            flex-direction: row; /* Keep in a row format */
+            justify-content: center;
+            align-items: center;
+        }
+    
+        #nav_opt ul {
+            display: flex;
+            flex-direction: row; /* Ensure items are aligned horizontally */
+            gap: 15px; /* Add some spacing between menu items */
+        }
+    
+        #nav_opt ul li {
+            display: inline-block; /* Ensure menu items are properly displayed */
+            padding: 10px;
+        }
+    
+        .hamburger {
+            display: none !important; /* Hide hamburger in desktop view */
+        }
+
+        .admin-icon
+        {
+            display:none !important;
+        }
+    }
+}
+
+

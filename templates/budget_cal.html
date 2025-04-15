@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--Bootsrap links-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
+    <!--links to add a specific fonts from google-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+
+    <!--link to connect the budget_cal.css file to html file-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/budget_cal.css') }}">
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid" id="header_abt">
+
+            <div class="g-0 row" id="nav_bar">
+
+                <div class="col-md-6" id="title1">
+                    <h1>VISHAAL'S</h1>
+                </div>
+
+                <div class="col-md-6" id="column1">
+                    <!-- Left side: Hamburger toggle -->
+                    <div class="hamburger" onclick="toggleMenu()"> ☰ </div>
+
+                    <!-- Center: Navigation menu -->
+                    <div class="components" id="nav_opt">
+                        <ul>
+                            <li><a href="{{ url_for('home') }}">Home</a></li>
+                            <li><a href="{{ url_for('services') }}">Services</a></li>
+                            <li><a href="{{ url_for('col_guide') }}">Color Guide</a></li>
+                            <li><a href="{{ url_for('budget_cal') }}">Budget Calculator</a></li>
+                            <li><a href="{{ url_for('about') }}">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </div>
+    </header>
+
+
+    <br>
+
+    <div class="container">
+
+        <form id="cal_form" action="{{ url_for('calculate_price') }}" method="post">
+
+            <div class="row text-center" id="bud_title">
+                <h1>Paint Budget Calculator</h1>
+
+                <p>Hello! Let’s get started and find you a perfect painting system for your space.</p>
+            </div>
+
+            <br>
+
+            <div class="row d-flex flex-wrap justify-content-between align-items-start" id="options">
+
+                <!-- Project Type -->
+                <div class="col" id="bud_project">
+                    <h4>Project Type</h4>
+                    <div class="d-flex gap-3" id="opt_paint_type">
+                        <input type="radio" name="project_type" value="Fresh Painting" id="F_paint" required> Fresh Painting
+                        <input type="radio" name="project_type" value="Re-Painting" id="R_paint" required> Re-Painting
+                    </div>
+                </div>
+
+                <!-- Type of Space -->
+                <div class="col" id="bud_space">
+                    <h4>Type of Space</h4>
+                    <div class="d-flex gap-3">
+                        <input type="radio" name="project_space" value="Interior" id="Int_paint" required>Interior
+                        <input type="radio" name="project_space" value="Exterior" id="Ext_paint" required>Exterior
+                    </div>
+                </div>
+
+            </div>
+            <br>
+            <br>
+
+
+            <div class="row" id="sqrt_container">
+                <div class="col-md-7">
+                    <h4>Enter carpet area in SQFT*</h4>
+                    <input type="text" id="numberInput" name="square_feet" placeholder="Enter numbers only" required>
+                    <p id="error-message" style="color: red; display: none;">Only numbers are allowed!</p>
+
+                    <script>
+                        document.getElementById("numberInput").addEventListener("input", function () {
+                            let value = this.value;
+                            if (!/^\d*$/.test(value)) { // Regular expression to check if input contains only digits
+                                document.getElementById("error-message").style.display = "block";
+                                this.value = value.replace(/\D/g, ''); // Remove non-numeric characters
+                            } else {
+                                document.getElementById("error-message").style.display = "none";
+                            }
+                        });
+                    </script>
+                </div>
+            </div>
+            <br>
+            <!-- button to perform action when clicked  -->
+            <div class="cal_btn_container">
+                <button type="submit" id="calculate_btn"> Calculate </button>
+            </div>
+            
+        </form>
+    </div>
+
+
+ 
+<br>
+<br>
+    <!--CONTENT OF BUDGET CAL PAGE-->
+    <div class="budget_container">
+        <div class="content_section">
+            <strong>
+                <h3> Paint Budget Calculator: Estimate Your Painting Costs Easily</h3>
+            </strong>
+            
+            <p>Are you someone who has just bought their dream home or are trying to give a fresh look to
+                their home and are utterly confused with the cost of painting? Then Voila! Asian Paints Paint Budget
+                Calculator is all you need.
+                Our paint budget calculator is used to ease the manual process that is required to measure paint and the
+                amount of painting
+                cost per square foot for your walls. With the calculator, you can get an estimate for your house
+                painting cost in a few simple
+                steps without any hassle of calling contractors and others. </p>
+
+
+
+            <h3>How to Use the Paint Budget Calculator?</h3>
+            <p>With our Asian Paints Paint Budget Calculator you can find the right estimates for your painting cost per
+                square foot or house
+                painting cost with just a few simple details of your home and the 4 simple steps given below -</p>
+
+
+
+            <h4>Step 1: Choose the Type of the Project</h4>
+            <p>The first step is selecting whether your project is for an interior or exterior painting job.
+                The painting cost per sf changes based on this decision, as interior and exterior paints have different
+                pre-painting requirements,
+                painting processes, and other requirements.</p>
+
+
+
+            <h4>Step 2: Select Interior or Exterior Paint</h4>
+            <p>Next, decide whether you need interior paint or exterior paint. The painting price per square foot for
+                exterior jobs
+                is usually higher because exterior paints the painting price per square foot can change depending on the
+                advanced exterior paints
+                you use for the wall to withstand harsh weather, while interior paints can be different considering the
+                paint formulations focus more
+                on appearance and indoor wear resistance.</p>
+
+
+
+            <h4>Step 3: Input Your Room Dimensions</h4>
+            <p>Enter the dimensions of the room or area you plan to paint. The total painting price per square foot will
+                depend on the size
+                of the space, as larger rooms will require more paint and labour, impacting your overall budget.</p>
+        </div>
+    </div>
+
+    <!--FOOTER -->
+    <div class="footer" style="background-color: antiquewhite;">
+        <footer>
+            <div class="container-fluid p-4 bg-dark text-light">
+                <div class="row">
+                    <div class="col-md-3">
+                        <h4>Contact Us</h4>
+                        <p>Phone: +1-123-456-7890</p>
+                        <p>Email: info@vishaals.com</p>
+                        <p>Address: 123 Painting Lane, City, State, ZIP</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>Our Paint Partners</h4>
+                        <ul>
+                            <li><a href="https://www.asianpaints.com" target="_blank">Asian Paints</a></li>
+                            <li><a href="https://www.bergerpaints.com" target="_blank">Berger Paints</a></li>
+                            <li><a href="https://www.nipponpaint.com" target="_blank">Nippon Paints</a></li>
+                            <li><a href="https://www.dulux.com" target="_blank">Dulux Paints</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="/about-us">About Us</a></li>
+                            <li><a href="/services">Services</a></li>
+                            <li><a href="/projects">Completed Projects</a></li>
+                            <li><a href="/contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>Follow Us</h4>
+                        <a href="https://facebook.com/vishaals" target="_blank">Facebook</a> |
+                        <a href="https://instagram.com/vishaals" target="_blank">Instagram</a>
+                    </div>
+                </div>
+                <div class="text-center mt-3">
+                    <p>&copy; 2025 VISHAAL'S Painting Services. All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    
+        <!-- calling the nav_opt div container on clicking the toogle  -->
+        <script>
+
+            function toggleMenu() {
+          var menu = document.getElementById("nav_opt");
+         menu.classList.toggle("active");
+           }
+    
+    
+          document.addEventListener("click", function (event) {
+          var menu = document.getElementById("nav_opt");
+          var hamburger = document.querySelector(".hamburger");
+    
+          // Check if click is NOT inside the menu or hamburger button
+         if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
+             menu.classList.remove("active");
+         }
+         });
+     
+         
+         </script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+    <!-- Bootsrap js links-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

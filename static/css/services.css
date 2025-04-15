@@ -1,0 +1,376 @@
+body{
+    background-color: #133550;
+}
+
+/*header styling*/
+
+header {
+    background-color: #133550;
+    font-family: "Cormorant Garamond", serif;
+    color:white;
+}
+
+#components {
+    background-color: #133550;
+    /* Background color for the header */
+    padding: 10px 0;
+    /* Padding for the header */
+    display: flex;
+    /* Align items in a row */
+    justify-content: center;
+    /* Evenly space items */
+    align-items: center;
+
+}
+
+#components ul {
+    list-style: none;
+    /* Remove bullet points */
+    display: flex;
+    /* Align items in a row */
+    justify-content: center;
+    /* Evenly space items */
+    margin: 0;
+    padding: 0;
+}
+
+#components li {
+    margin: 0 15px;
+    /* Space between items */
+}
+
+#components a {
+    text-decoration: none;
+    /* Remove underline */
+    color: white;
+    /* Default text color */
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    /* Smooth transition for hover effect */
+}
+
+
+#column1 .components a:hover {
+    color: #ff6347; /* Change to a different color on hover (e.g., tomato) */
+    }
+
+.space
+{
+    height:3px;
+    background-color:white;
+}
+
+#header{
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 300;
+    font-style: normal;   
+    color: #fff;
+}
+
+#title1{
+    text-align: left;
+    color: white;
+    padding: 5px;
+
+}
+
+#title h4{
+    text-align: center; /*For our services text*/
+    font-size: 36px;
+}
+
+
+
+#subtitle{ /*for the description*/
+    font-size: 40px;
+    padding: 18px;
+    line-height: 50px;
+}
+
+#blocks{ /*font style applied to the content within the blocks*/
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 300;
+    font-style: normal;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    position: relative;
+}
+
+#service1{
+    border-radius: 10px;
+    background-color: #fff;
+    height: 350px;
+    width: 350px;
+}
+
+#service1 h4{
+    color: #000;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+#service1 p{
+    color: #000;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+#service2{
+    border-radius: 10px;
+    background-color: #fff;
+    height: 350px;
+    width: 350px;
+}
+
+#service2 h4{
+    color: #000;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+#service2 p{
+    color: #000;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+#service3{
+    border-radius: 10px;   
+    background-color: #fff;
+    height: 350px;
+    width: 350px;
+}
+
+#service3 h4{
+    color: #000;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+#service3 p{
+    color: #000;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+#service4{
+    border-radius: 10px;
+    background-color: #fff;
+    height: 350px;
+    width: 350px;
+}
+
+#service4 h4{
+    color: #000;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+#service4 p{
+    color: #000;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+#service5{
+    border-radius: 10px;
+    background-color: #fff;
+    height: 350px;
+    width: 350px;
+}
+
+#service5 h4{
+    color: #000;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+#service5 p{
+    color: #000;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+#service6{
+    border-radius: 10px;
+    background-color: #fff;
+    height: 350px;
+    width: 350px;
+}
+
+#service6 h4{
+    color: #000;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+#service6 p{
+    color: #000;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.carousel-item img{ /*applied to the images in the carousel*/
+    width: 600px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10%;
+    padding: 10px;
+}
+
+.components ul {
+    list-style: none; /* Remove bullet points */
+    display: flex; /* Align items in a row */
+    justify-content: center; /* Evenly space items */
+    margin: 0;
+    padding: 0;
+    }
+    
+    .components li {
+    margin: 0 15px; /* Space between items */
+    }
+    
+    .components a {
+    text-decoration: none; /* Remove underline */
+    color: white; /* Default text color */
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+    }
+    
+    .components a:hover {
+    color: #ff6347; /* Change to a different color on hover (e.g., tomato) */
+    }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        display: block;
+    }
+
+    #nav_bar{
+        display:flex;
+        flex-wrap:nowrap;/* Ensures wrapping instead of horizontal overflow */
+        justify-content: space-between;
+    }
+
+
+    #header_abt {
+        width: 100%;
+        padding: 5px 40px;
+        flex-wrap: wrap;
+    }
+    
+    /* Navigation bar */
+    #nav_bar {
+        display: flex;
+        justify-content:space-between;
+        padding-right:20px;
+        /* align-items: center; */
+    }
+    
+    /* Title styling */
+    #title1 h1{
+        font-family:"Cormorant Garamond", serif;
+        justify-content: baseline;
+        font-size: 40px;
+    }
+
+    .hamburger {
+            display: block;
+            font-size:40px;
+            width:30vh;
+            cursor: pointer;
+            color: white;
+            padding: 5px 6px;
+            border-radius: 5px;
+            position:relative;
+            z-index: 1000;
+        }  
+    
+    
+    #nav_bar {
+        display:flex;
+        flex-direction:row;
+        align-items:right;
+        width: 100%;
+        padding: 10px;
+    }
+
+  
+
+    #column1 {
+        flex:1;
+        width: 100%;
+    }
+    
+ 
+    #nav_opt {
+        display: none;
+        flex-direction: column;
+        background-color: #133550;
+        width: 100%;
+        padding: 10px;
+        text-align: left;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 1100;
+    }
+    
+    #nav_opt ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: left;
+        list-style:none;
+    }
+
+    #nav_opt ul li {
+        padding: 10px;
+        width: 100%;
+    }
+    
+    #nav_opt ul li a {
+        width: 100%;
+        text-decoration:none;
+        color:white;
+        font-size: 26px;
+    }
+    
+    #nav_opt.active {
+        display: flex;
+    }
+    
+   
+}
+
+@media (min-width: 769px) {
+    #nav_opt {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #nav_opt ul {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+    }
+    
+    #nav_opt ul li {
+        display: inline-block;
+        padding: 10px;
+    }
+    
+    .hamburger {
+        display: none !important;
+    }
+    
+    .admin-icon {
+        display: none !important;
+    }
+}

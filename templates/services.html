@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Services - Vishaal's</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/services.css') }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid" id="header_abt">
+
+            <div class="g-0 row" id="nav_bar">
+
+                <div class="col-md-6" id="title1">
+                    <h1>VISHAAL'S</h1>
+                </div>
+
+                <div class="col-md-6" id="column1">
+                    <!-- Left side: Hamburger toggle -->
+                    <div class="hamburger" onclick="toggleMenu()"> ☰ </div>
+
+                    <!-- Center: Navigation menu -->
+                    <div class="components" id="nav_opt">
+                        <ul>
+                            <li><a href="{{ url_for('home') }}">Home</a></li>
+                            <li><a href="{{ url_for('services') }}">Services</a></li>
+                            <li><a href="{{ url_for('col_guide') }}">Color Guide</a></li>
+                            <li><a href="{{ url_for('budget_cal') }}">Budget Calculator</a></li>
+                            <li><a href="{{ url_for('about') }}">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </div>
+    </header>
+
+
+<div class="space">
+
+</div>
+
+<br>
+    <div class="container">
+        <!--This is the header section-->
+        <div class="row" id="header">
+            <div id="title">
+                <h4>OUR SERVICES</h4>
+            </div>
+            <div id="subtitle">
+                <p>We Offer a Range of Services <br> to Meet Your Needs</p>
+            </div>
+        </div>
+
+        <!--This is the main body, here we have the blocks-->
+        <div class="row g-3" id="blocks">
+            <!--This is the first service and the carousel for it-->
+            <div class="col-12 col-lg-4 col-md-6 d-flex flex-column align-items-start service-info" id="service1">
+                <i class="ri-home-9-line ri-5x"></i>
+                <h4>Residential Painting</h4>
+                <p>Professional painting services for homes, enhancing curb appeal and interior ambiance with
+                    high-quality
+                    finishes and custom color options.</p>
+            </div>
+            <div class="col-12 col-lg-8 col-md-6 carousel" id="carousel-container">
+                <div class="carousel slide" id="carouselExample1" data-wrap="false">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="{{ url_for('static', filename='images/service_pics/resi1.jpg') }}" alt="kitchen" class="d-block w-100 img-fluid">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{{ url_for('static', filename='images/service_pics/resi2.jpg') }}" alt="livingroom" class="d-block w-100 img-fluid">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{{ url_for('static', filename='images/service_pics/resi3.jpg') }}" alt="bedroom" class="d-block w-100 img-fluid">
+                        </div>
+                    </div>
+
+                    <!-- Manual Controls -->
+                    <button class="carousel-control-prev" type="button" data-target="#carouselExample1"
+                        data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-target="#carouselExample1"
+                        data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+
+            <!--This is the second service and the carousel for it-->
+            <div class="col-12 col-md-6 service-info" id="service2">
+                <i class="ri-building-line ri-5x"></i>
+                <h4>Commercial Painting</h4>
+                <p>Expert painting for businesses and commercial spaces, offering durable, attractive solutions
+                    tailored to brand image and high-traffic environments.</p>
+            </div>
+            <div class="col-12 col-lg-8 col-md-6 service-carousel" id="carousel-container">
+                <div class="carousel slide" id="carouselExample2" data-wrap="false">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="{{ url_for('static', filename='images/service_pics/comm1.jpg') }}" alt="street art" class="d-block w-100 img-fluid">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{{ url_for('static', filename='images/service_pics/comm2.jpg') }}" alt="office" class="d-block w-100 img-fluid">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{{ url_for('static', filename='images/service_pics/comm3.jpg') }}" alt="school" class="d-block w-100 img-fluid">
+                        </div>
+                    </div>
+
+                    <!-- Manual Controls -->
+                    <button class="carousel-control-prev" type="button" data-target="#carouselExample2"
+                        data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-target="#carouselExample2"
+                        data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+
+            <!--This is the third service and the carousel for it-->
+            <div class="col-12 col-md-6 service-info" id="service3">
+                <i class="ri-armchair-line ri-5x"></i>
+                <h4>Interior Painting</h4>
+                <p>Transform your indoor spaces with premium paints and expert application, creating stylish,
+                    fresh, and vibrant rooms that reflect your personality and taste.</p>
+            </div>
+            <div class="col-12 col-lg-8 col-md-6 service-carousel" id="carousel-container">
+                <div class="carousel slide" id="carouselExample3" data-wrap="false">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="{{ url_for('static', filename='images/service_pics/int1.jpg') }}" alt="man working" class="d-block w-100 img-fluid">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{{ url_for('static', filename='images/service_pics/int2.jpg') }}" alt="livingroom" class="d-block w-100 img-fluid">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{{ url_for('static', filename='images/service_pics/int3.jpg') }}" alt="bathroom" class="d-block w-100 img-fluid">
+                        </div>
+                    </div>
+
+                     <!-- Manual Controls -->
+                     <button class="carousel-control-prev" type="button" data-target="#carouselExample3"
+                     data-slide="prev">
+                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                     <span class="visually-hidden">Previous</span>
+                 </button>
+                 <button class="carousel-control-next" type="button" data-target="#carouselExample3"
+                     data-slide="next">
+                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                     <span class="visually-hidden">Next</span>
+                 </button>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4 col-md-6 service-info" id="service4">
+                <i class="ri-door-open-line ri-5x"></i>
+                <h4>Exterior Painting</h4>
+                <p>Enhance the look and protection of your property's exterior with weather-resistant
+                    coatings that stand up to the elements and elevate curb appeal.</p>
+            </div>
+            <div class="col-12 col-lg-8 col-md-6 service-carousel" id="carousel-container">
+                <div class="carousel slide" id="carouselExample4" data-wrap="false">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="{{ url_for('static', filename='images/service_pics/ext1.jpg') }}" alt="playground" class="d-block w-100 img-fluid">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{{ url_for('static', filename='images/service_pics/ext2.jpg') }}" alt="men working" class="d-block w-100 img-fluid">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{{ url_for('static', filename='images/service_pics/ext3.jpeg') }}" alt="metro pillars" class="d-block w-100 img-fluid">
+                        </div>
+                    </div>
+
+                     <!-- Manual Controls -->
+                     <button class="carousel-control-prev" type="button" data-target="#carouselExample4"
+                     data-slide="prev">
+                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                     <span class="visually-hidden">Previous</span>
+                 </button>
+                 <button class="carousel-control-next" type="button" data-target="#carouselExample4"
+                     data-slide="next">
+                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                     <span class="visually-hidden">Next</span>
+                 </button>
+                </div>
+            </div>
+
+            <!--This is the fifth service and the carousel for it-->
+            <div class="col-12 col-lg-4 col-md-6 service-info" id="service5">
+                <i class="ri-paint-brush-line ri-5x"></i>
+                <h4>Textured Painting</h4>
+                <p>Add depth and character to walls with textured finishes, including techniques
+                    like faux finishes, sponging, and more, for a unique and stylish look.</p>
+            </div>
+            <div class="col-12 col-lg-8 col-md-6 service-carousel" id="carousel-container">
+                <div class="carousel slide" id="carouselExample5" data-wrap="false">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="{{ url_for('static', filename='images/service_pics/txt1.png') }}" alt="bedroom" class="d-block w-100 img-fluid">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{{ url_for('static', filename='images/service_pics/txt2.png') }}" alt="livingroom" class="d-block w-100 img-fluid">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{{ url_for('static', filename='images/service_pics/txt3.jpg') }}" alt="livingroom" class="d-block w-100 img-fluid">
+                        </div>
+                    </div>
+
+                     <!-- Manual Controls -->
+                     <button class="carousel-control-prev" type="button" data-target="#carouselExample5"
+                     data-slide="prev">
+                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                     <span class="visually-hidden">Previous</span>
+                 </button>
+                 <button class="carousel-control-next" type="button" data-target="#carouselExample5"
+                     data-slide="next">
+                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                     <span class="visually-hidden">Next</span>
+                 </button>
+                </div>
+            </div>
+
+            <!--This is the sixth service and the carousel for it-->
+            <div class="col-12 col-lg-4 col-md-6 service-info" id="service6">
+                <i class="ri-brush-ai-line ri-5x"></i>
+                <h4>Custom Based Services</h4>
+                <p>Whether you're looking for a specific style, custom murals, or specialty finishes, our team works
+                    closely with you to
+                    bring your ideas to life with precision and craftsmanship.</p>
+            </div>
+            <div class="col-12 col-lg-8 col-md-6 service-carousel" id="carousel-container">
+                <div class="carousel slide" id="carouselExample6" data-wrap="false">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="{{ url_for('static', filename='images/service_pics/cus1.jpg') }}" alt="faux wood" class="d-block w-100 img-fluid">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{{ url_for('static', filename='images/service_pics/cus2.jpg') }}" alt="murals" class="d-block w-100 img-fluid">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{{ url_for('static', filename='images/service_pics/cus3.jpg') }}" alt="tile finish" class="d-block w-100 img-fluid">
+                        </div>
+                    </div>
+
+                     <!-- Manual Controls -->
+                     <button class="carousel-control-prev" type="button" data-target="#carouselExample6"
+                     data-slide="prev">
+                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                     <span class="visually-hidden">Previous</span>
+                 </button>
+                 <button class="carousel-control-next" type="button" data-target="#carouselExample6"
+                     data-slide="next">
+                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                     <span class="visually-hidden">Next</span>
+                 </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- script to control the activity of menu toogle -->
+      <!-- calling the nav_opt div container on clicking the toogle  -->
+      <script>
+
+        function toggleMenu() {
+      var menu = document.getElementById("nav_opt");
+     menu.classList.toggle("active");
+       }
+
+
+      document.addEventListener("click", function (event) {
+      var menu = document.getElementById("nav_opt");
+      var hamburger = document.querySelector(".hamburger");
+
+      // Check if click is NOT inside the menu or hamburger button
+     if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
+         menu.classList.remove("active");
+     }
+     });
+ 
+     
+     </script>
+
+
+
+
+
+    <!--Here we have the links to connect to bootstrap's JavaScript file as well as a js file created for services specifically-->
+    <!-- <script src="service.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

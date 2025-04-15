@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Vishaal's</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">   
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    </head>
+<body>
+
+    <!-- <header>
+        <!-- The header of the page -->
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <!-- Logo: Full width on small screens, half width on large screens 
+                <div class="col-12 col-md-6 text-md-start text-center order-1 order-md-1">
+                    <h1 id="title1">VISHAAL'S</h1>
+                </div>
+
+                <!-- Navbar: Full width on small screens, half width on large screens 
+                <div class="col-12 col-md-6 order-2 order-md-2">
+                    <nav class="d-flex justify-content-center justify-content-md-end">
+                        <ul class="list-unstyled d-flex flex-column flex-md-row gap-3" id="components">
+                            <li><a href="{{ url_for('home') }}">Home</a></li>
+                            <li><a href="{{ url_for('services') }}">Services</a></li>
+                            <li><a href="{{ url_for('col_guide') }}">Color Guide</a></li>
+                            <li><a href="{{ url_for('budget_cal') }}">Budget Calculator</a></li>
+                            <li><a href="{{ url_for('about') }}">About Us</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header> -->
+
+    <header>
+        <div class="container-fluid" id="header_abt">
+
+            <div class="g-0 row" id="nav_bar">
+
+                <div class="col-md-6" id="title1">
+                    <h1>VISHAAL'S</h1>
+                </div>
+
+                <div class="col-md-6" id="column1">
+                    <!-- Left side: Hamburger toggle -->
+                    <div class="hamburger" onclick="toggleMenu()"> ☰ </div>
+
+                    <!-- Center: Navigation menu -->
+                    <div class="components" id="nav_opt">
+                        <ul>
+                            <li><a href="{{ url_for('home') }}">Home</a></li>
+                            <li><a href="{{ url_for('services') }}">Services</a></li>
+                            <li><a href="{{ url_for('col_guide') }}">Color Guide</a></li>
+                            <li><a href="{{ url_for('budget_cal') }}">Budget Calculator</a></li>
+                            <li><a href="{{ url_for('about') }}">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </div>
+    </header>
+
+
+
+<div class="space">
+
+</div>
+
+<br>
+    <div class="container-fluid">
+        <div class="row" id="header">
+            <!--This is the main text-->
+            <div id="title">
+                <h3>ABOUT US</h3>
+            </div>
+
+            <!--Here is the code for the carousel banner-->
+            <div class="col" id="carousel-container">
+                <div class="carousel slide" data-ride="carousel" data-wrap="true" data-interval="5000" id="carouselExample">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="{{ url_for('static', filename='images/abt_pics/abt1.jpg') }}" alt="living room" class="d-block">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{{ url_for('static', filename='images/abt_pics/abt2.jpg') }}" alt="living room" class="d-block">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{{ url_for('static', filename='images/abt_pics/abt3.jpg') }}" alt="living room" class="d-block">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{{ url_for('static', filename='images/abt_pics/abt4.jpg') }}" alt="living room" class="d-block">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Here we have the controls for manual change of carousel-->
+            <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only"></span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only"></span>
+            </a>
+        </div>
+    </div>
+
+    <!--Here we have the code for the blog, telling the company's history-->
+    <div class="container mt-7">
+        <div class="row" id="history">
+            <div class="col-12 col-lg-6 col-md-6" id="history-text">
+                <h2>Our History</h2>
+                <p>Founded in 2005, Vishaal's has been providing professional painting services for over 15 years. 
+                    Our team of experienced painters is dedicated to delivering high-quality results for residential 
+                    and commercial clients. We take pride in our work and strive to exceed customer expectations 
+                    with every project. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel asperiores impedit
+                    veniam voluptas, ipsum, aut voluptates quidem amet tenetur, iure similique ipsa fuga saepe molestias 
+                    eius dolore voluptate sunt fugiat.
+                </p>
+            </div>
+            <div class="col-12 col-lg-6 col-md-6" id="history-image">
+                <img src="{{ url_for('static', filename='images/abt_pics/history.jpg') }} " alt="painting" class="img-fluid">
+            </div>
+        </div>
+    </div>
+
+    <!--Here comes the client testimonials-->
+    <div class="container mt-7">
+        <div class="row" id="client-header">
+            <div class="col" id="client-title">
+                <h2>Client Testimonials</h2>
+            </div>
+        </div>
+        <w-100></w-100> <!--This is a line break-->
+        <div class="row g-3" id="testimonials">
+            <!--Here we have the first testimonial-->
+            <div class="col-12 col-lg-4 col-md-6 me-3" id="test1">
+                <i class="ri-user-3-fill ri-5x"></i>
+                <p>"Vishaal's did an amazing job painting our home. The team was professional, efficient, and 
+                    the results were fantastic. I would highly recommend them to anyone looking for quality 
+                    painting services."</p>
+                <p>- Jane Doe</p>
+            </div>
+
+            <!--Here we have the second testimonial-->
+            <div class="col-12 col-lg-4 col-md-6 me-3" id="test2">
+                <i class="ri-user-3-fill ri-5x"></i>
+                <p>"We hired Vishaal's to paint our office building and were extremely pleased with the results. 
+                    The painters were courteous, skilled, and completed the job on time. We will definitely use 
+                    their services again."</p>
+                <p>- John Smith</p>
+            </div>
+
+            <!--Here we have the third testimonial-->
+            <div class="col-12 col-lg-4 col-md-6 me-3" id="test3">
+                <i class="ri-user-3-fill ri-5x"></i>
+                <p>"I had a great experience working with Vishaal's. They painted my living room and kitchen, 
+                    and the transformation was incredible. The painters were professional and the quality of 
+                    work was top-notch. I would recommend them to anyone looking for a reliable painting company."</p>
+                <p>- Sarah Johnson</p>
+            </div>
+        </div>
+    </div>
+
+
+      <!-- calling the nav_opt div container on clicking the toogle  -->
+      <script>
+
+        function toggleMenu() {
+      var menu = document.getElementById("nav_opt");
+     menu.classList.toggle("active");
+       }
+
+
+      document.addEventListener("click", function (event) {
+      var menu = document.getElementById("nav_opt");
+      var hamburger = document.querySelector(".hamburger");
+
+      // Check if click is NOT inside the menu or hamburger button
+     if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
+         menu.classList.remove("active");
+     }
+     });
+ 
+     
+     </script>
+
+    <!--Here we have the links to connect to bootstrap's JavaScript file as well as a js file created for services specifically-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

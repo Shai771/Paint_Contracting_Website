@@ -1,0 +1,481 @@
+/*CONTACT US PAGE -STYLING */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: white;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 300;
+    /* Optional: Set light weight as default */
+    font-style: normal;
+    /* Optional: Ensure normal font style */
+}
+
+/*header styling*/
+
+header {
+    background-color: #133550;
+    font-family: "Cormorant Garamond", serif;
+
+
+}
+
+#title {
+    text-align: left;
+    color: white;
+    padding: 5px;
+
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+}
+
+
+#components {
+    background-color: #133550;
+    /* Background color for the header */
+    padding: 10px 0;
+    /* Padding for the header */
+    display: flex;
+    /* Align items in a row */
+    justify-content: center;
+    /* Evenly space items */
+    align-items: center;
+
+}
+
+#components ul {
+    list-style: none;
+    /* Remove bullet points */
+    display: flex;
+    /* Align items in a row */
+    justify-content: center;
+    /* Evenly space items */
+    margin: 0;
+    padding: 0;
+}
+
+#components li {
+    margin: 0 15px;
+    /* Space between items */
+}
+
+#components a {
+    text-decoration: none;
+    /* Remove underline */
+    color: white;
+    /* Default text color */
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    /* Smooth transition for hover effect */
+}
+
+#components a:hover {
+    color: #ff6347;
+    /* Change to a different color on hover (e.g., tomato) */
+}
+
+.space {
+    height: 5px;
+    background-color: white;
+}
+
+/*CONTACT SECTION form styling*/
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../images/contact_pics/con_back.jpg") no-repeat center center/cover;
+    z-index: -1; /* Puts it behind the form */
+}
+
+.contact_form_container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#Contct_form {
+    width: 30rem;
+    background: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1; /* Puts it above the background */
+}
+.container_card {
+    background-color: #f1f2f4;
+
+}
+
+/* #Contct_form {
+    height: 110vh;
+    box-shadow: 20px 20px 25px 10px rgba(247, 247, 247, 0.984);
+} */
+
+
+.contact_form_container {
+    height: 130vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/*why choose us? COLUMN */
+#whyus_container {
+    margin: 0px;
+    padding: 40px;
+    background-color: #133550;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#whyus_title {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: white;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+/*container where the columns are present*/
+#whyus_cols {
+    background-color: white;
+    min-height: 30vh;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.952);
+    border: 5px solid #133550;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 20px;
+    scrollbar-width: thin;
+    scrollbar-color: #133550 #ffffff;
+}
+
+
+
+#whyus_col {
+    display: inline-block;
+    vertical-align: top;
+    width: 200px;
+    /* You can adjust the width to control scroll behavior */
+    margin: 0 10px;
+    padding: 20px;
+    text-align: center;
+    white-space: normal; /* Allow wrapping inside column */
+}
+
+#whyus_cols img {
+    max-width: 60%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.whyus_content {
+    color: black;
+    text-align: center;
+}
+
+/* Show scrollbar only on small screens */
+@media (min-width: 769px) {
+    #whyus_cols {
+        white-space: normal;
+        overflow-x: hidden;
+    }
+
+    #whyus_col {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+    }
+}
+
+
+/*number container*/
+
+.number_container {
+    background-color: #133550;
+    display: flex;
+    flex-wrap: nowrap;
+    /* Prevents wrapping */
+    justify-content: space-around;
+    /* Distributes evenly */
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.952);
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.num_image {
+    flex: 1;
+    /* Allows the image section to grow/shrink */
+    min-width: 120px;
+    max-width: 200px;
+    /* Prevents excessive growth */
+}
+
+.num_image img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.num_content,
+.num_number {
+    flex: 2;
+    /* These take more space than the image */
+    text-align: center;
+    color: white;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 300;
+    padding: 10px;
+}
+
+.num_content h3 {
+    font-size: 1.7vw;
+    /* Scales dynamically with screen size */
+    text-align: center;
+
+}
+
+.num_number {
+    font-size: 2.5vw;
+    /* Scales dynamically */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .number_container {
+        justify-content: space-between;
+        /* Prevents elements from clumping */
+        padding: 10px;
+    }
+
+    .num_content h3,
+    .num_number {
+        font-size: 4vw;
+        /* Increase text size for readability */
+    }
+
+    .num_image {
+        max-width: 150px;
+        /* Slightly reduce image size */
+    }
+}
+
+/* NAVBAR STYLING */
+#nav_bar {
+    display: flex;
+    font-size: 1.5rem;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 15px;
+    color: white;
+    background-color: #133550;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1000;
+}
+
+#nav_opt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hamburger menu for small screens */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+#logout_menu li {
+    list-style: none;
+}
+
+#logout_menu a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        display: block;
+    }
+
+    #nav_bar{
+        display:flex;
+        flex-wrap:nowrap;/* Ensures wrapping instead of horizontal overflow */
+        justify-content: space-between;
+        
+    }
+
+
+    #header_abt {
+        width: 100%;
+        padding: 5px 40px;
+        flex-wrap: wrap;
+    }
+    
+    /* Navigation bar */
+    #nav_bar {
+        display: flex;
+        justify-content:space-between;
+        padding-right:20px;
+        font-family:"Cormorant Garamond", serif;
+       
+    }
+    
+    /* Title styling */
+    #title1 h1{
+        font-family:"Cormorant Garamond", serif;
+        justify-content: baseline;
+        font-size: 35px;
+    }
+
+    .hamburger {
+            display: block;
+            font-size:35px;
+            width:30vh;
+            margin-right:30px;
+            cursor: pointer;
+            color: white;
+            padding: 5px 9px;
+            border-radius: 5px;
+            position:relative;
+            z-index: 1000;
+        }  
+    
+    
+    #nav_bar {
+        display:flex;
+        flex-direction:row;
+        align-items:right;
+        width: 100%;
+        padding: 10px;
+    }
+
+  
+
+    #column1 {
+        flex:1;
+        width: 100%;
+    }
+    
+ 
+    #nav_opt {
+        display: none;
+        flex-direction: column;
+        background-color: #133550;
+        width: 100%;
+        padding: 10px;
+        text-align: left;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 1100;
+        font-family:"Cormorant Garamond", serif;
+    }
+    
+    #nav_opt ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: left;
+        list-style:none;
+    }
+
+    #nav_opt ul li {
+        padding: 10px;
+        width: 100%;
+    }
+    
+    #nav_opt ul li a {
+        width: 100%;
+        text-decoration:none;
+        color:white;
+    }
+    
+    #nav_opt.active {
+        display: flex;
+    }
+    
+    #history-image {
+        max-width: 300px;
+    }
+    
+    #testimonials {
+        display: block;
+        text-align: center;
+    }
+}
+
+@media (min-width: 769px) {
+    #nav_opt {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #nav_opt ul {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+    }
+    
+    #nav_opt ul li {
+        display: inline-block;
+        padding: 10px;
+    }
+    
+    .hamburger {
+        display: none !important;
+    }
+    
+    .admin-icon {
+        display: none !important;
+    }
+}
+
