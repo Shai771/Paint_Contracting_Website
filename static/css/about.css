@@ -5,6 +5,13 @@
     padding: 0;
 }
 
+body{
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 300; /* Optional: Set light weight as default */
+    font-style: normal; /* Optional: Ensure normal font style */
+    color:white;
+  }
+
 html, body {
     overflow-x: hidden; /* Prevents horizontal scrolling */
     width: 100%;
@@ -297,3 +304,41 @@ color: #ff6347; /* Change to a different color on hover (e.g., tomato) */
         display: none !important;
     }
 }
+
+/* Footer styling */
+#paint_links ul li
+{
+    list-style: none;
+
+}
+
+#paint_links ul li a
+{
+    text-decoration: none;
+    color:white;
+
+}
+
+#pages_links ul li
+{
+    list-style: none;
+
+}
+
+#pages_links ul li a
+{
+    text-decoration: none;
+    color:white;
+
+}
+
+
+#social_links a
+{
+    text-decoration: none;
+    color:white;
+
+}
+
+
+

@@ -287,3 +287,38 @@ color: #ff6347; /* Change to a different color on hover (e.g., tomato) */
         display: none !important;
     }
 }
+
+/* Footer styling */
+#paint_links ul li
+{
+    list-style: none;
+
+}
+
+#paint_links ul li a
+{
+    text-decoration: none;
+    color:white;
+
+}
+
+#pages_links ul li
+{
+    list-style: none;
+
+}
+
+#pages_links ul li a
+{
+    text-decoration: none;
+    color:white;
+
+}
+
+
+#social_links a
+{
+    text-decoration: none;
+    color:white;
+
+}

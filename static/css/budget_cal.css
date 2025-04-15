@@ -508,3 +508,41 @@ font-size: 1.2rem;
     }
 }
 
+
+/* Footer styling */
+#paint_links ul li
+{
+    list-style: none;
+
+}
+
+#paint_links ul li a
+{
+    text-decoration: none;
+    color:white;
+
+}
+
+#pages_links ul li
+{
+    list-style: none;
+
+}
+
+#pages_links ul li a
+{
+    text-decoration: none;
+    color:white;
+
+}
+
+
+#social_links a
+{
+    text-decoration: none;
+    color:white;
+
+}
+
+
+

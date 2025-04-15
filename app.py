@@ -30,6 +30,25 @@ def homeb():
         return redirect(url_for("home"))  # Redirect logged-in users to home
     return render_template("home_bef_log.html")
 
+# @app.route("/login", methods=["GET", "POST"])
+# def login():
+#     if request.method == "POST":
+#         email = request.form["email"]
+#         password = request.form["password"]
+
+#         # Fetch user from the database
+#         user = UserCredentials.query.filter_by(email=email).first()
+
+#         if user and user.password == password:  # Compare passwords 
+#             session["user_id"] = user.user_id  # Store user session
+#             flash("Login successful!", "success")
+#             return redirect(url_for("home"))  # Redirect to home after login
+#         else:
+#             flash("Invalid email or password. Please try again.", "danger")
+
+#     return render_template("login.html")
+
+# login page logic
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -39,12 +58,18 @@ def login():
         # Fetch user from the database
         user = UserCredentials.query.filter_by(email=email).first()
 
-        if user and user.password == password:  # Compare passwords 
-            session["user_id"] = user.user_id  # Store user session
-            flash("Login successful!", "success")
-            return redirect(url_for("home"))  # Redirect to home after login
+        if user and user.password == password:
+            session["user_id"] = user.user_id
+            session["flash_message"] = ("Login successful!", "success")
+            return redirect(url_for("home"))
         else:
-            flash("Invalid email or password. Please try again.", "danger")
+            session["flash_message"] = ("Invalid email or password. Please try again.", "danger")
+            return redirect(url_for("login"))
+
+    # Show flash message if it exists
+    if "flash_message" in session:
+        message, category = session.pop("flash_message")  # Show once
+        flash(message, category)
 
     return render_template("login.html")
 

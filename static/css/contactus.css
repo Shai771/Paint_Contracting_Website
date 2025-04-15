@@ -14,40 +14,17 @@ body {
     /* Optional: Ensure normal font style */
 }
 
+
+
 /*header styling*/
 
 header {
     background-color: #133550;
     font-family: "Cormorant Garamond", serif;
-
-
+    color:white;
 }
 
-#title {
-    text-align: left;
-    color: white;
-    padding: 5px;
-
-}
-
-nav ul {
-    padding: 0;
-    margin: 0;
-}
-
-nav ul li {
-    list-style: none;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    padding: 10px;
-}
-
-
-#components {
+.components {
     background-color: #133550;
     /* Background color for the header */
     padding: 10px 0;
@@ -60,7 +37,7 @@ nav ul li a {
 
 }
 
-#components ul {
+.components ul {
     list-style: none;
     /* Remove bullet points */
     display: flex;
@@ -71,12 +48,13 @@ nav ul li a {
     padding: 0;
 }
 
-#components li {
+.components  li {
     margin: 0 15px;
+    list-style: none;
     /* Space between items */
 }
 
-#components a {
+.components a {
     text-decoration: none;
     /* Remove underline */
     color: white;
@@ -87,10 +65,10 @@ nav ul li a {
     /* Smooth transition for hover effect */
 }
 
-#components a:hover {
-    color: #ff6347;
-    /* Change to a different color on hover (e.g., tomato) */
-}
+
+#column1 .components a:hover {
+    color: #ff6347; /* Change to a different color on hover (e.g., tomato) */
+    }
 
 .space {
     height: 5px;
@@ -478,4 +456,50 @@ nav ul li a {
         display: none !important;
     }
 }
+
+
+/* Footer styling */
+
+footer{
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 300;
+    /* Optional: Set light weight as default */
+    font-style: normal;
+}
+#paint_links ul li
+{
+    list-style: none;
+
+}
+
+#paint_links ul li a
+{
+    text-decoration: none;
+    color:white;
+    
+
+}
+
+#pages_links ul li
+{
+    list-style: none;
+
+}
+
+#pages_links ul li a
+{
+    text-decoration: none;
+    color:white;
+
+}
+
+
+#social_links a
+{
+    text-decoration: none;
+    color:white;
+
+}
+
+
 
