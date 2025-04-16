@@ -5,8 +5,14 @@ from db_model import db, ContactForm, UserCredentials,PaintMaterials
 app = Flask(__name__)
 
 # Configure the database connection
-app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://root:@localhost:3307/trail"
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False 
+import os
+
+# for local testing, fallback to your localhost db
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
+    'DATABASE_URL',
+    "mysql+pymysql://root:@localhost:3307/trail"
+)
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = "your_secret_key"
 
 
